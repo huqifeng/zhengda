@@ -1,0 +1,31 @@
+@import '~iview/dist/styles/iview.css';
+.ivu-menu-horizontal {
+  height: 50px !important;
+}
+.ivu-menu-light {
+  background: none !important;
+  border: none !important;
+}
+.ivu-menu-light:after {
+  content: "" !important;
+  display: block;
+  width: 100% !important;
+  height: 0px !important;
+}
+.ivu-menu-item,
+.ivu-menu-submenu {
+  padding: 0 0 !important;
+  margin: 0 25px !important;
+}
+.ivu-menu-item,
+.ivu-menu-submenu-title {
+  height: 18px;
+  font-size: 18px;
+  font-family: PingFangSC-Semibold;
+  font-weight: 600;
+  color: #ffffff !important;
+  line-height: 50px;
+}
+.ivu-menu-submenu .ivu-menu-submenu-title .ivu-menu-submenu-title-icon {
+  display: none !important;
+}
