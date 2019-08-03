@@ -3,7 +3,7 @@
     <div class="fullpage">
       <div class="section" id="section0">
         <video id="myVideo" loop muted data-autoplay>
-          <source src="../assets/首页.mp4" type="video/mp4" />
+          <source src="../assets/video.mp4" type="video/mp4" />
         </video>
         <div class="pagecontent">
           <div class="menu">
@@ -35,14 +35,22 @@ export default {
   props: {
     msg: String
   },
+  data() {
+    return {
+      fullpage: ""
+    };
+  },
   mounted() {
-    new Fullpage(".fullpage", {
+    this.fullpage = new Fullpage(".fullpage", {
       anchors: ["firstPage"],
       sectionsColor: ["#4A6FB1"],
       autoScrolling: false,
       css3: true,
       fitToSection: false
     });
+  },
+  beforeDestroy() {
+    this.fullpage.destroy("all");
   },
   components: {
     HeaderMenu,

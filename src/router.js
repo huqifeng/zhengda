@@ -1,15 +1,16 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Home from './views/Home.vue';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
-  // mode: 'hash',
+  // mode: 'history',
+  mode: 'hash',
 
   base: process.env.BASE_URL,
-  routes: [{
+  routes: [
+    {
       path: '/',
       name: 'home',
       component: Home
@@ -17,15 +18,61 @@ export default new Router({
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import( /* webpackChunkName: "about" */ './views/About.vue')
+      component: resolve => require(['@/views/About.vue'], resolve),
+      children: [
+        {
+          path: '/',
+          component: resolve => {
+            require(['@/components/about/AboutIntroduce.vue'], resolve);
+          }
+        }
+      ]
+    },
+    {
+      path: '/technology',
+      name: 'technology',
+      component: resolve => require(['@/views/Technology.vue'], resolve),
+      children: [
+        {
+          path: '/',
+          component: resolve => {
+            require([
+              '@/components/technology/TechnologyPlatform.vue'
+            ], resolve);
+          }
+        }
+      ]
     },
     {
       path: '/business',
       name: 'business',
-      component: () => import('./views/Business.vue')
+      component: resolve => require(['@/views/Business.vue'], resolve),
+      children: [
+        {
+          path: '/',
+          component: resolve => {
+            require(['@/components/business/BusinessPharmacy.vue'], resolve);
+          }
+        },
+        {
+          path: 'pharmacy',
+          component: resolve => {
+            require(['@/components/business/BusinessPharmacy.vue'], resolve);
+          }
+        },
+        {
+          path: 'medical',
+          component: resolve => {
+            require(['@/components/business/BusinessPharmacy.vue'], resolve);
+          }
+        },
+        {
+          path: 'health',
+          component: resolve => {
+            require(['@/components/business/BusinessPharmacy.vue'], resolve);
+          }
+        }
+      ]
     }
   ]
-})
+});

@@ -1,134 +1,55 @@
 <template>
   <div class="business">
-    <div class="fullpage">
-      <div class="section" id="section0">
-        <div class="headerImgBox">
-          <img :src="coverImgUrl" alt />
-        </div>
-        <div class="pagecontent">
-          <div class="menu">
-            <HeaderMenu></HeaderMenu>
-          </div>
-          <div class="HeaderTextWrap">
-            <div class="HeaderTextBox">
-              <div class="wrap">
-                <div>
-                  <p class="chinese">社会责任</p>
-                  <p class="english">ENGLISH</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="content">
-      <ContentNavigation></ContentNavigation>
-    </div>
-    <FooterMap></FooterMap>
+    <oneListPage v-bind="post"></oneListPage>
   </div>
 </template>
 
 <script>
-import Fullpage from "fullpage.js";
-import HeaderMenu from "../components/HeaderMenu";
-import FooterMap from "../components/FooterMap";
-import ContentNavigation from "../components/ContentNavigation";
+import oneListPage from "../components/oneListPage";
 
 export default {
   name: "Business",
   data() {
     return {
-      coverImgUrl:
-        "http://www.rwxqfbj.com/files/attached/201708/24/201708241629559130.jpg"
+      post: {
+        twoNavName: {
+          cn: "我们的业务",
+          en: "OUR BUSINESS"
+        },
+        bannerText: [
+          {
+            type: "cn",
+            text: "国内外一流的全自动化生产线"
+          },
+          {
+            type: "cn",
+            text: "获得多项国际认证"
+          }
+        ],
+        threeNavList: [
+          {
+            title: ["制药", "业务"],
+            path: "/business/pharmacy"
+          },
+          {
+            title: ["医疗", "业务"],
+            path: "/business/medical"
+          },
+          {
+            title: ["大健康", "业务"],
+            path: "/business/health"
+          }
+        ],
+        coverImgUrl: require("../assets/businessBannerImg2.png")
+      }
     };
   },
-  mounted() {
-    new Fullpage(".fullpage", {
-      anchors: ["firstPage"],
-      sectionsColor: ["#4A6FB1"],
-      autoScrolling: false,
-      css3: true,
-      fitToSection: false
-    });
-  },
   components: {
-    HeaderMenu,
-    FooterMap
+    oneListPage
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-.pagecontent {
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.2);
-  position: absolute;
-  z-index: 4;
-  left: 0;
-  top: 0;
-}
-#section0 .menu {
-  position: absolute;
-  z-index: 5;
-  width: 100%;
-  left: 0;
-  top: 0;
-  -webkit-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-}
-
-/*solves problem with overflowing video in Mac with Chrome */
-#section0 {
-  overflow: hidden;
-}
-.headerImgBox {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-.HeaderTextWrap {
-  position: absolute;
-  width: 100%;
-  height: 300px;
-  right: 57%;
-  top: 50%;
-  margin-top: -150px;
-  background: rgba(0, 0, 0, 0.66);
-  text-align: right;
-  .HeaderTextBox {
-    display: inline-block;
-    height: 100%;
-    width: 442px;
-    .wrap {
-      height: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      text-align: left;
-      p {
-        color: #fff;
-        line-height: 76px;
-      }
-      .chinese {
-        font-size: 48px;
-      }
-      .english {
-        font-size: 36px;
-      }
-    }
-  }
-}
 </style>

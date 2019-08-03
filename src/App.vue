@@ -29,6 +29,7 @@ li {
   text-align: center;
   min-width: 1200px;
   font-size: 16px;
+  overflow: hidden;
 }
 .fullpage {
   min-height: 700px;
@@ -36,5 +37,10 @@ li {
 .W12 {
   width: 1200px;
   margin: 0 auto;
+}
+.clearFloat:after {
+  content: "";
+  clear: both;
+  display: block;
 }
 </style>

@@ -203,6 +203,7 @@ export default {
     position: absolute;
     top: -34px;
     left: 50%;
+    margin-left: -35px;
     z-index: 7;
     transition: transform 0.2s ease-in-out;
     cursor: pointer;

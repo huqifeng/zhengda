@@ -5,11 +5,20 @@
       <div class="seach"></div>
     </div>
     <div class="bottom">
-      <div class="logoBox">
+      <!-- <div class="logoBox">
         <img src="../assets/sinologo.png" alt />
-      </div>
+      </div>-->
+      <router-link to="/" tag="div" class="logoBox">
+        <img src="../assets/sinologo.png" alt />
+      </router-link>
       <ul class="menuBox">
-        <li class="menuLi" v-for="(item,index) in menu" v-bind:key="index">
+        <router-link
+          class="menuLi"
+          v-for="(item,index) in menu"
+          v-bind:key="index"
+          :to="item.path"
+          tag="li"
+        >
           <div class="menuLiTextBox">
             <p class="text">{{item.title}}</p>
             <div class="bottomLine"></div>
@@ -17,7 +26,16 @@
           <ul class="menuLiList" v-if="item.list &&item.list.length>0">
             <li v-for="(item2,index2) in item.list" v-bind:key="index2">{{item2.title}}</li>
           </ul>
-        </li>
+        </router-link>
+        <!-- <li class="menuLi" v-for="(item,index) in menu" v-bind:key="index">
+          <div class="menuLiTextBox">
+            <p class="text">{{item.title}}</p>
+            <div class="bottomLine"></div>
+          </div>
+          <ul class="menuLiList" v-if="item.list &&item.list.length>0">
+            <li v-for="(item2,index2) in item.list" v-bind:key="index2">{{item2.title}}</li>
+          </ul>
+        </li>-->
       </ul>
     </div>
   </div>
@@ -31,7 +49,7 @@ export default {
       menu: [
         {
           title: "关于中生",
-          path: "",
+          path: "/about",
           list: [
             {
               title: "关于中生",
@@ -49,27 +67,27 @@ export default {
         },
         {
           title: "我们的业务",
-          path: ""
+          path: "/business"
         },
         {
           title: "我们的技术",
-          path: ""
+          path: "/technology"
         },
         {
           title: "新闻中心",
-          path: ""
+          path: "/business4"
         },
         {
           title: "社会责任",
-          path: ""
+          path: "/business6"
         },
         {
           title: "投资者关系",
-          path: ""
+          path: "/business7"
         },
         {
           title: "职业发展",
-          path: ""
+          path: "/business8"
         }
       ]
     };
@@ -187,6 +205,14 @@ export default {
     }
     & .menuLiList {
       display: block;
+    }
+  }
+  .router-link-active {
+    & .menuLiTextBox .text {
+      color: #fcc800;
+    }
+    & .menuLiTextBox .bottomLine {
+      opacity: 1;
     }
   }
   .menuLiActive {
