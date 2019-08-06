@@ -106,7 +106,7 @@ export default {
       // width: 36px;
       font-size: 14px;
       line-height: 18px;
-      color: #302e27;
+      color: #fff;
       padding: 6px 6px;
       font-weight: 800;
       border-radius: 6px;
@@ -116,6 +116,7 @@ export default {
       cursor: pointer;
     }
     .twoLiBox:hover {
+      color: #302e27;
       &:after {
         content: "";
         position: absolute;
@@ -140,6 +141,7 @@ export default {
     }
     .router-link-active:after {
       content: "";
+
       position: absolute;
       width: 2px;
       height: 2px;
@@ -158,6 +160,7 @@ export default {
     }
     .router-link-active {
       border: 2px solid #302e27;
+      color: #302e27;
     }
   }
 }

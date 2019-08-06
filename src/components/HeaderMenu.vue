@@ -75,11 +75,11 @@ export default {
         },
         {
           title: "新闻中心",
-          path: "/business4"
+          path: "/news"
         },
         {
           title: "社会责任",
-          path: "/business6"
+          path: "/duty"
         },
         {
           title: "投资者关系",

@@ -33,7 +33,7 @@ export default {
         threeNavList: [
           {
             title: ["公司", "介绍"],
-            path: "/about/pharmacy"
+            path: "/about/introduce"
           },
           {
             title: ["使命", "愿景"],
@@ -53,7 +53,7 @@ export default {
           },
           {
             title: ["公司", "荣誉"],
-            path: "/about/health"
+            path: "/about/honor"
           }
         ],
         coverImgUrl: require("../assets/businessBannerImg.png"),

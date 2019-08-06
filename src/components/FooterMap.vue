@@ -9,7 +9,7 @@
     </div>
     <div class="navMap">
       <div class="W12">
-        <ul class="nav">
+        <ul class="nav clearFloat">
           <li class="navLi">
             <p class="chinese">法律条款</p>
             <p class="english">LEGAL TERMS</p>
@@ -125,6 +125,7 @@ export default {
     margin: 0 auto;
     padding-top: 80px;
     height: 84px;
+    box-sizing: content-box;
     .navLi {
       display: inline-block;
       height: 84px;

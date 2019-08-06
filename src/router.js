@@ -25,6 +25,18 @@ export default new Router({
           component: resolve => {
             require(['@/components/about/AboutIntroduce.vue'], resolve);
           }
+        },
+        {
+          path: 'introduce',
+          component: resolve => {
+            require(['@/components/about/AboutIntroduce.vue'], resolve);
+          }
+        },
+        {
+          path: 'honor',
+          component: resolve => {
+            require(['@/components/about/AboutHonor.vue'], resolve);
+          }
         }
       ]
     },
@@ -70,6 +82,38 @@ export default new Router({
           path: 'health',
           component: resolve => {
             require(['@/components/business/BusinessPharmacy.vue'], resolve);
+          }
+        }
+      ]
+    },
+    {
+      path: '/news',
+      name: 'news',
+      component: resolve => require(['@/views/News.vue'], resolve),
+      children: [
+        {
+          path: '/',
+          component: resolve => {
+            require(['@/components/news/NewsDynamic.vue'], resolve);
+          }
+        }
+      ]
+    },
+    {
+      path: '/duty',
+      name: 'duty',
+      component: resolve => require(['@/views/Duty.vue'], resolve),
+      children: [
+        {
+          path: '/',
+          component: resolve => {
+            require(['@/components/duty/DutyDynamic.vue'], resolve);
+          }
+        },
+        {
+          path: 'dynamic',
+          component: resolve => {
+            require(['@/components/duty/DutyDynamic.vue'], resolve);
           }
         }
       ]

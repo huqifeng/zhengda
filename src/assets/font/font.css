@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'SourceHanSansCN-Bold';
+  src: url-loader('./SourceHanSansCN-Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceHanSansCN-Extralight';
+  src: url-loader('./SourceHanSansCN-Extralight.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceHanSansCN-Heavy';
+  src: url-loader('./SourceHanSansCN-Heavy.otf');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceHanSansCN-light';
+  src: url-loader('./SourceHanSansCN-Light.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceHanSansCN-Medium';
+  src: url-loader('./SourceHanSansCN-Medium.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceHanSansCN-Normal';
+  src: url-loader('./SourceHanSansCN-Normal.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceHanSansCN-Regular';
+  src: url-loader('./SourceHanSansCN-Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+}
