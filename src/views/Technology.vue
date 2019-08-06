@@ -33,7 +33,7 @@ export default {
           },
           {
             title: ["知识", "产权"],
-            path: "/technology/property "
+            path: "/technology/intellectual"
           },
           {
             title: ["在研", "产品"],

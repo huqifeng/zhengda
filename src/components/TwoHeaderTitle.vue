@@ -1,9 +1,7 @@
 <template>
   <div class="TwoHeaderTitle">
     <div class="TwoHeaderTitleBox">
-      <p class="en">{{op.en1}}</p>
-      <p class="en">{{op.en2}}</p>
-      <p class="cn">{{op.cn}}</p>
+      <p :class="[item.type]" v-for="(item,index) in op" :key="index">{{item.value}}</p>
     </div>
   </div>
 </template>
@@ -29,11 +27,11 @@ export default {
     box-sizing: border-box;
     padding-left: 37px;
     text-align: left;
-
+    position: relative;
     .en {
       height: 30px;
       font-size: 30px;
-      font-family: PingFangSC-Ultralight;
+      // font-family: PingFangSC-Ultralight;
       color: rgba(68, 64, 49, 1);
       line-height: 30px;
       margin-bottom: 10px;
@@ -52,11 +50,11 @@ export default {
   .TwoHeaderTitleBox:before {
     content: "";
     width: 10px;
-    height: 104px;
+    height: 100%;
     border-radius: 5px 5px;
     position: absolute;
     left: 0;
-    top: 3px;
+    top: 0px;
     background: #ecbf0b;
   }
 }

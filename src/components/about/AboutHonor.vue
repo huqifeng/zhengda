@@ -121,11 +121,20 @@ export default {
   name: "aboutHonor",
   data() {
     return {
-      op: {
-        en1: "CORPOPATE",
-        en2: "HONOUR",
-        cn: "公司荣誉"
-      },
+      op: [
+        {
+          type: "en",
+          value: "CORPOPATE"
+        },
+        {
+          type: "en",
+          value: "HONOUR"
+        },
+        {
+          type: "cn",
+          value: "公司荣誉"
+        }
+      ],
       jiangxiang: "中国生物制药重要奖项",
       zijiangxiang: "子公司重要奖项",
       lineImgUrl: require("../../assets/about/honor/lineTime.png"),
@@ -180,7 +189,7 @@ export default {
   font-family: SourceHanSansCN-Bold;
   font-weight: bold;
   color: rgba(0, 0, 0, 1);
-  line-height: 76px;
+  line-height: 67px;
   padding-left: 40px;
   background: #dcdbdb;
   text-align: left;

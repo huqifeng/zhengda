@@ -41,7 +41,7 @@ export default {
           },
           {
             title: ["管理", "团队"],
-            path: "/about/health"
+            path: "/about/team"
           },
           {
             title: ["组织", "架构"],

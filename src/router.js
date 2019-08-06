@@ -37,6 +37,12 @@ export default new Router({
           component: resolve => {
             require(['@/components/about/AboutHonor.vue'], resolve);
           }
+        },
+        {
+          path: 'team',
+          component: resolve => {
+            require(['@/components/about/AboutTeam.vue'], resolve);
+          }
         }
       ]
     },
@@ -50,6 +56,22 @@ export default new Router({
           component: resolve => {
             require([
               '@/components/technology/TechnologyPlatform.vue'
+            ], resolve);
+          }
+        },
+        {
+          path: 'platform',
+          component: resolve => {
+            require([
+              '@/components/technology/TechnologyPlatform.vue'
+            ], resolve);
+          }
+        },
+        {
+          path: 'intellectual',
+          component: resolve => {
+            require([
+              '@/components/technology/TechnologyIntellectual.vue'
             ], resolve);
           }
         }
