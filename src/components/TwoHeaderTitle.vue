@@ -19,7 +19,6 @@ export default {
 <style lang="less" scoped>
 .TwoHeaderTitle {
   width: 100%;
-  height: 120px;
   position: relative;
 
   .TwoHeaderTitleBox {
