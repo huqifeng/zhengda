@@ -139,6 +139,25 @@ export default new Router({
           }
         }
       ]
+    },
+    {
+      path: '/career',
+      name: 'career',
+      component: resolve => require(['@/views/Career.vue'], resolve),
+      children: [
+        {
+          path: '/',
+          component: resolve => {
+            require(['@/components/career/CareerConcept.vue'], resolve);
+          }
+        },
+        {
+          path: 'concept',
+          component: resolve => {
+            require(['@/components/career/CareerConcept.vue'], resolve);
+          }
+        }
+      ]
     }
   ]
 });

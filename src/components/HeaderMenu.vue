@@ -87,7 +87,7 @@ export default {
         },
         {
           title: "职业发展",
-          path: "/business8"
+          path: "/career"
         }
       ]
     };
